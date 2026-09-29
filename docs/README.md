@@ -67,7 +67,7 @@ The app code is deliberately compact in places. These lessons unpack it. Formatt
 
 The site has no framework, backend, database, CMS, authentication, or physics library. It is a static application with rich behavior in the browser. The lessons explain when those other pieces would become useful, without pretending we already use them.
 
-The prototype is **not publicly deployed**. GitHub previously rejected Pages setup for this private repository under the account’s current plan. The deployment chapter explains the prepared workflow and the remaining hosting choice; learning the workflow does not require changing repository visibility.
+The repository is now **public**, and GitHub Pages is configured to publish the Vite build through **GitHub Actions**. The site address is [futtano.github.io/personal-website](https://futtano.github.io/personal-website/). The earlier private-repository restriction is resolved. Read the [deployment lesson](lessons/11-build-and-deployment.md) and [deployment learning entry](journal/2026-09-29-github-pages.md) for the configuration and verification process.
 
 ## How we will maintain this course
 

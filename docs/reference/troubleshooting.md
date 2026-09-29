@@ -34,7 +34,7 @@ Start with what you observed, the URL, and the shortest reproduction. Record act
 | Mobile page is wider than viewport | Fixed widths, long strings, window content | Inspect scrollWidth vs clientWidth for document and reader |
 | Playwright cannot find Chromium | Browser binary not installed/matched | Run npx playwright install chromium |
 | Tests pass but visuals look broken | Assertions only checked DOM behavior | Inspect scene screenshots and real hardware rendering |
-| Pages setup fails with plan error | Recorded private-repository restriction | Resolve hosting choice; do not silently change visibility |
+| Pages serves raw source or `/src/main.js` fails | Publishing source set to “Deploy from a branch” | Select GitHub Actions; run deploy.yml to build and publish dist |
 | Workflow build succeeds, site not live | Deployment job and Pages settings | Inspect deployment result and actual live URL |
 
 ## Read network failures precisely

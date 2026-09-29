@@ -37,6 +37,8 @@ Edit `src/scene.js` for the environment, `src/style.css` for the interface, and 
 
 A GitHub Pages workflow is provided in `.github/workflows/deploy.yml`; it builds and publishes `dist/` on pushes to `main`. Set Settings → Pages → Source to GitHub Actions.
 
-**Current deployment blocker:** GitHub reported that the account plan does not support Pages for this private repository. The owner has not approved changing repository visibility. Keep the source private until explicitly instructed otherwise, or choose another static host. The site is not publicly deployed.
+The repository is public. Pages uses **GitHub Actions**, which builds the application and publishes `dist/`; do not select “Deploy from a branch” for the source tree. The site address is [futtano.github.io/personal-website](https://futtano.github.io/personal-website/). Check the [deployment workflow runs](https://github.com/Futtano/personal-website/actions/workflows/deploy.yml) for publication status.
+
+`package.json` keeps `private: true` to prevent accidental npm publication; it does not control GitHub visibility or website access.
 
 Relative asset paths support root hosting and GitHub Pages project subpaths. See [Vite deployment documentation](https://vite.dev/guide/static-deploy.html).

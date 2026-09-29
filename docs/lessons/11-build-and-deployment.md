@@ -114,19 +114,27 @@ This pipeline currently **builds and deploys**; it does not execute our learning
 
 ## The actual deployment status
 
-The local remote is `Futtano/personal-website`, and the repository is private. A previous Pages setup request returned: “Your current plan does not support GitHub Pages for this repository.” This is a recorded response, not a permanent statement about all GitHub plans.
+As of 2026-09-29, `Futtano/personal-website` is public and GitHub Pages uses **GitHub Actions** (`build_type: workflow`). The site address is [https://futtano.github.io/personal-website/](https://futtano.github.io/personal-website/). Deployment runs are listed in the [workflow history](https://github.com/Futtano/personal-website/actions/workflows/deploy.yml).
 
-The user has not chosen to make source public or selected another host. No public deployment is claimed. `https://futtano.github.io/personal-website/` is an expected address **if** this repository is eventually deployed through Pages, not a verified live site.
+The earlier account-plan restriction applied when the repository was private. The owner made it public, resolving that constraint. `private: true` in `package.json` remains correct: it prevents npm publication and has no effect on Pages access.
 
-Changing repository visibility affects source access. Choosing a host affects where built content becomes public. These are separate decisions. This documentation task does neither.
+### Why “Deploy from a branch” was incorrect here
 
-## A deployment procedure once hosting is chosen
+Branch publishing from `main` at `/` served the source `index.html`. That document referenced `/src/main.js`, and its modules still depended on Vite transformations. A successful branch-publishing job therefore did not mean this application worked.
+
+Our custom workflow runs `npm ci` and `npm run build`, then publishes only `dist/`. Set **Settings → Pages → Build and deployment → Source → GitHub Actions**. The existing workflow is sufficient; no second workflow or generated-files branch is needed. See [GitHub’s publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+Branch publishing is a valid alternative when a chosen branch/folder already contains deployable files. This project intentionally keeps build output out of Git, so its source branch is not that folder. Our learning `docs/` directory is also not the application build output.
+
+The [deployment learning entry](../journal/2026-09-29-github-pages.md) records the correction and verification. Repository visibility, Pages publishing source, successful workflow execution, and a working live browser session are separate checks.
+
+## The deployment procedure
 
 1. Review content and source changes; ensure sample text is intentional.
 2. Install the locked dependencies and run relevant checks.
 3. Build, then test the output using preview, including direct article links.
 4. Commit the intended source and lockfile. Avoid generated dependencies and secrets.
-5. Publish through the chosen workflow. For Pages, select GitHub Actions as the Pages source after resolving account eligibility.
+5. Push the intended commit to `main`, or manually run `Deploy website to GitHub Pages` on `main`. Keep the Pages source set to GitHub Actions.
 6. Wait for the deployment job, not only the build job, to succeed.
 7. Open the actual URL on another device. Check assets, article links, mobile reading, and graphics fallback.
 8. Record the commit, deployment URL, result, and any differences from preview.

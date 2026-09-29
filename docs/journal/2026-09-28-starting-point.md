@@ -16,7 +16,9 @@ Those checks do not establish exhaustive collision coverage, complete accessibil
 
 ## Deployment status
 
-No public release is claimed. The GitHub Pages setup attempt was rejected for the private repository under the account’s current plan. A hosting choice remains open; repository visibility has not been changed for this documentation task.
+**Historical baseline (2026-09-28):** the Pages setup attempt was rejected while the repository was private, so no public release was claimed at that time.
+
+**Resolved on 2026-09-29:** the owner made the repository public, and Pages was switched to the existing GitHub Actions build workflow. See the [deployment learning entry](2026-09-29-github-pages.md) for the current configuration and verification.
 
 ## Questions to start with
 

@@ -17,7 +17,7 @@ These are proposed learning opportunities, not already implemented features or a
 | I | Load the world only on demand | Async lifecycle and failure UI | Direct reading does not fetch scene/Three.js until needed |
 | J | Add better coastal surfaces | Textures, UVs, asset size and licensing | Documented asset source, correct color space, acceptable loading cost |
 | K | Generate static post pages and RSS | Build-time content generation | Individual HTML metadata and a validated feed |
-| L | Publish through the chosen host | CI/CD, paths, HTTPS | Verified live URL tied to a known source commit |
+| L | Repeat and understand the GitHub Pages release | CI/CD, paths, HTTPS | Trace a new main commit through the build, artifact, deployment, and live URL |
 
 ## Known prototype boundaries to revisit
 
@@ -36,7 +36,7 @@ These are proposed learning opportunities, not already implemented features or a
 - Blog content is manually registered, trusted source; labels still identify sample content.
 - Posts lack individual server-delivered HTML metadata, dates, draft handling, search, and a feed.
 - The prototype has not received a comprehensive accessibility audit or real-device performance survey.
-- The GitHub workflow has no automated test/typecheck gate yet, and hosting remains unresolved.
+- Hosting is GitHub Pages through GitHub Actions. The workflow still has no automated test/typecheck gate; browser examples are run separately.
 
 These are useful limits to understand, not reasons to postpone learning or writing. Pick an improvement with a small, observable result.
 
